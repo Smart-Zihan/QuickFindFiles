@@ -117,8 +117,8 @@ def on_search():
         
         text_result.delete(1.0, tk.END)
         if unique_results:
-            # 构造格式化输出
-            output = f"已完成查找（包含{keyword}的目录/文件名）：\n"
+            # 构造格式化输出（新增总数显示）
+            output = f"已完成查找（包含{keyword}的目录/文件名 | 共{len(unique_results)}个）：\n"
             output += "     - 文件夹（目录）：\n"
             output += "\n".join(f"         - {folder}" for folder in folders) if folders else "         - 无"
             output += "\n     - 文件：\n"
